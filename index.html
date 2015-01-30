@@ -4,22 +4,21 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Most Recent Posts</h1>
+  <h1 class="pagination">Most Recent Posts</h1>
 
   <ul class="post-list">
     {% for post in site.posts limit: 3 %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
+         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
         <p>{{ post.excerpt }}
       </li>
     {% endfor %}
   </ul>
 
-  <div><p><a href="{{ "/postlist/" | prepend: site.baseurl }}">See Older Posts</a></p>
+  <div id="older-post"><h1 class="post-header"><p><a href="{{ "/postlist/" | prepend: site.baseurl }}">See Older Posts</a></h1></p>
   </div>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
